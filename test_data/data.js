@@ -1,8 +1,9 @@
 const Data = function () {
 
-   this.email = 'YOUR_EMAIL';
-   this.password = 'YOUR_PASSWORD';
-   this.taskName = 'Some Task';
-   this.taskUpdate = 'Updated Task';
+   this.email = Date.now()+'@gmail.com';
+   this.name = 'Test Name';
+   this.lastname = 'TestLast';
+   this.password = 'test pass';
+   this.datox = '01';
  }
  module.exports = new Data();

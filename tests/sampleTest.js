@@ -1,7 +1,7 @@
 const data = require('../test_data/data');
 const page = require('../page_objects/page')
-const loginPage = require('../page_objects/loginPage');
-const tasksPage = require('../page_objects/tasksPage');
+const signinPage = require('../page_objects/signinPage');
+//const tasksPage = require('../page_objects/tasksPage');
 
 beforeAll(function () {
   page.openUrl()
@@ -9,11 +9,11 @@ beforeAll(function () {
 
 describe("SignIn into the Site", function() {
     it("Enter application", function() {
-        loginPage.enterUserCredentials(data.email, data.password);
-        expect(tasksPage.isAgendaViewDisplayed()).toBe(true);
+        signinPage.signIn(data.email, data.name, data.lastname, data.password, data.datox);
+        //expect(tasksPage.isAgendaViewDisplayed()).toBe(true);
     });
 
-    it("Create a task", function() {
+    /*it("Create a task", function() {
         tasksPage.createTask(data.taskName);
         expect(tasksPage.getLastTaskText()).toEqual(data.taskName);
     });
@@ -28,4 +28,5 @@ describe("SignIn into the Site", function() {
         tasksPage.deleteTask();
         expect(tasksPage.getTasksCount()).not.toEqual(initialListLength);
     });
+    */
 });
